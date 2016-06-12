@@ -1,0 +1,23 @@
+<% if @article.errors.any? %>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-2">
+			<div class="alert alert-danger">
+				<div class="panel-heading">
+				<a href="#" class="close" data-dismiss="alert">&#215;</a>
+					<h2 class="panel-title">
+						Waduh ada 
+						<%= pluralize(@article.errors.count, "error") %>
+						saat input nih : 
+					</h2>
+					<div class="panel-body">
+						<ul>
+							<% @article.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %> 
